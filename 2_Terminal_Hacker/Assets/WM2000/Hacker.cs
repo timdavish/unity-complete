@@ -13,18 +13,26 @@ public class Hacker : MonoBehaviour
   void ShowMainMenu()
   {
     Terminal.ClearScreen();
-    var greeting = "Hello Tim";
-    greeting = "Hello Ben";
-    Terminal.WriteLine(greeting);
+    Terminal.WriteLine("Hello Tim");
     Terminal.WriteLine("What would you like to hack into?");
     Terminal.WriteLine("Press 1 for the local library");
     Terminal.WriteLine("Press 2 for the police station");
     Terminal.WriteLine("Enter your selection:");
   }
 
-  // Update is called once per frame
-  void Update()
+  void OnUserInput(string input)
   {
-
+    if (input == "menu")
+    {
+      ShowMainMenu();
+    }
+    else if (input == "007")
+    {
+      Terminal.WriteLine("Please select a level, Mr. Bond.");
+    }
+    else
+    {
+      Terminal.WriteLine("Please choose a valid level.");
+    }
   }
 }
